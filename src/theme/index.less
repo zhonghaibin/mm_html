@@ -1,0 +1,61 @@
+@import '~view-design/src/styles/index.less';
+// Color
+@primary-color: #f19ec2;
+
+
+// Layout and Grid
+@grid-columns: 24;
+@grid-gutter-width: 0;
+@layout-body-background: #f5f7f9;
+@layout-header-background: #f19ec2;
+@layout-header-height: 60px;
+@layout-header-padding: 0;
+@layout-footer-padding: 24px 50px;
+@layout-footer-background: @layout-body-background;
+@layout-sider-background: @layout-header-background;
+
+// Input
+@input-hover-border-color: @primary-color;
+@input-focus-border-color: @primary-color;
+@input-disabled-bg: #f3f3f3;
+
+@link-color: @primary-color;
+
+.@{tabs-prefix-cls} {
+  &-nav-scroll {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &-bar {
+    border-bottom: 1px solid @border-color-base;
+    margin-bottom: 0;
+  }
+}
+.@{menu-prefix-cls} {
+  &-item{
+    color: white;
+    &:hover{
+      background: white;
+      color: #cc749a;
+    }
+  }
+  &-light&-vertical &-item{
+    &-active:not(.@{menu-prefix-cls}-submenu){
+      color: #cc749a;
+      &:after{
+        background: #cc749a;
+      }
+    }
+  }
+
+  &-light{
+    background: @primary-color
+  }
+  &-vertical &-submenu-title
+  {
+    color: white;
+    &:hover{
+      background: white;
+    }
+  }
+}
