@@ -318,26 +318,26 @@
             this.modal.width = 600
             break
           case '会员详情':
-            if (!data.id) {
-              this.$Message.error('请先选择会员')
-              return false
-            }
-            cookie.set('vid', data.id)
+            // if (!data.id) {
+            //   this.$Message.error('请先选择会员')
+            //   return false
+            // }
+            // cookie.set('vid', data.id)
             this.modal.width = window.innerWidth - 200
             break
           case '变更等级':
-            if (!data.id) {
-              this.$Message.error('请先选择会员')
-              return false
-            }
+            // if (!data.id) {
+            //   this.$Message.error('请先选择会员')
+            //   return false
+            // }
             cookie.set('vid', data.id)
             this.modal.width = 600
             break
           case '消费型股东信息':
-            if (!data.id) {
-              this.$Message.error('请先选择会员')
-              return false
-            }
+            // if (!data.id) {
+            //   this.$Message.error('请先选择会员')
+            //   return false
+            // }
             this.modal.width = window.innerWidth - 200
             break
         }

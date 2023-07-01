@@ -25,3 +25,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### ui组件
+See http://v2.iviewui.com/docs/guide/install

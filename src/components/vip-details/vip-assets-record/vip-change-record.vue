@@ -25,7 +25,7 @@
             v-model="searchData.search"
             clearable
             enter-button
-            placeholder="可搜索关键词"
+            placeholder="关键词"
             search
             style="width: 250px"
             @on-clear="search"

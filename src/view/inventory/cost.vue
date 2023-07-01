@@ -65,7 +65,7 @@
           <Input
             v-model="searchData.search"
             enter-button
-            placeholder="可搜索商品名称/编号"
+            placeholder="商品名称/编号"
             search
             style="width: 250px"
             @on-search="search"

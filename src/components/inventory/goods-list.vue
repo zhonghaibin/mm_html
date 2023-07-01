@@ -18,7 +18,7 @@
             v-model="searchData.search"
             clearable
             enter-button
-            placeholder="可搜索商品名称/编号"
+            placeholder="商品名称/编号"
             search
             style="width: 250px"
             @on-clear="search"

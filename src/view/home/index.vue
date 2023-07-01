@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="box">
-            <div class="title">总收入</div>
+            <div class="title">总支出</div>
             <div class="price">￥341212.12</div>
             <div class="proportion">
               环比:

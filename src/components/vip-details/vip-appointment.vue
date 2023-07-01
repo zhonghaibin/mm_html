@@ -20,7 +20,7 @@
           v-model="searchData.search"
           clearable
           enter-button
-          placeholder="可搜索服务人员/预约内容"
+          placeholder="服务人员/预约内容"
           search
           style="width: 250px"
           @on-clear="search"

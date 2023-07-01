@@ -4,7 +4,7 @@
       v-model="searchData.search"
       clearable
       enter-button
-      placeholder="可搜索员工姓名"
+      placeholder="员工姓名"
       size="small"
       style="width: 100px"
       @on-change="search"

@@ -60,7 +60,7 @@
             v-model="searchData.search"
             clearable
             enter-button
-            placeholder="可搜索会员姓名/电话 "
+            placeholder="姓名/电话/卡号"
             search
             style="width: 250px"
             @on-clear="search"

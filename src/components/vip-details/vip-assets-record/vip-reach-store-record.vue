@@ -31,7 +31,7 @@
         <div class="box">
           <Input
             enter-button
-            placeholder="可搜索消费内容"
+            placeholder="消费内容"
             search
             style="width: 250px"
           />

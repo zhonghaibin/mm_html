@@ -11,7 +11,9 @@
           消息中心
           <Badge :count="messageUnreadCount" style="margin-left: 10px" />
         </DropdownItem>
-        <DropdownItem name="logout">退出登录</DropdownItem>
+        <DropdownItem name="logout" @click="handleClick('logout')">
+          退出登录
+        </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   </div>
@@ -34,7 +36,7 @@
       },
     },
     methods: {
-      ...mapActions(['handleLogOut']),
+      ...mapActions('user', ['handleLogOut']),
       logout() {
         this.handleLogOut().then(() => {
           this.$router.push({

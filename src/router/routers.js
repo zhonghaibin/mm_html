@@ -2,6 +2,15 @@ import Main from '@/components/main'
 
 export default [
   {
+    path: '/login',
+    name: 'login',
+    meta: {
+      title: '登录',
+      hideInMenu: true,
+    },
+    component: () => import('@/view/login/index.vue'),
+  },
+  {
     path: '/',
     name: '_home',
     redirect: '/home',

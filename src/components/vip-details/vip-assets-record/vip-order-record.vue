@@ -25,7 +25,7 @@
         <div class="box">
           <Input
             enter-button
-            placeholder="可搜索服务人员/消费内容"
+            placeholder="服务人员/消费内容"
             search
             style="width: 250px"
           />

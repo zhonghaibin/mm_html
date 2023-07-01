@@ -45,7 +45,7 @@
             v-model="searchData.search"
             clearable
             enter-button
-            placeholder="可搜索赠送内容"
+            placeholder="赠送内容"
             search
             style="width: 250px"
             @on-clear="search"
