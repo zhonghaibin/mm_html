@@ -17,7 +17,7 @@
             <Icon
               v-if="index > 0"
               class="icon"
-              type="ios-remove-circle"
+              type="md-remove-circle"
               @click="delRow(index)"
             />
           </div>
@@ -41,7 +41,7 @@
             </Select>
           </div>
           <div class="right">
-            <Icon class="icon" type="ios-add-circle" @click="addRow" />
+            <Icon class="icon" type="md-add-circle" @click="addRow" />
           </div>
         </div>
         <div v-if="item.type !== '1'" class="cell">
@@ -52,7 +52,7 @@
               <Icon
                 v-if="key > 0"
                 class="icon"
-                type="ios-remove-circle"
+                type="md-remove-circle"
                 @click="del(key)"
               />
               <span v-else>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -61,7 +61,7 @@
                 placeholder="请输入内容"
                 style="width: 100px"
               />
-              <Icon class="icon" type="ios-add-circle" @click="add(item)" />
+              <Icon class="icon" type="md-add-circle" @click="add(item)" />
             </div>
           </div>
           <div class="right"></div>
