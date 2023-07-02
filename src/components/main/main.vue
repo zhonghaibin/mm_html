@@ -42,6 +42,7 @@
             <user
               :message-unread-count="unreadCount"
               :user-avator="userAvator"
+              :username="username"
             />
             <Button />
           </header-bar>
@@ -105,6 +106,9 @@
       },
       userAvator() {
         return this.$store.state.user.avatar
+      },
+      username() {
+        return this.$store.state.user.username
       },
       // menuList() {
       //   return this.$store.getters.menuList

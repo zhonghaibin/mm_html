@@ -20,7 +20,7 @@
     </div>
     <div class="cell">
       <div class="bt">
-        <Icon type="md-magnet" />
+        <Icon type="md-person" />
         在线客服
       </div>
     </div>

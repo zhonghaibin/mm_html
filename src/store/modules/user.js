@@ -3,8 +3,8 @@
  */
 import Vue from 'vue'
 import { getToken, setToken } from '@/utils/token'
-import { getUid, setUid } from '@/utils/uid'
-import { login, logout } from '@/api/user'
+import { getUserInfo, login, logout } from '@/api/user'
+import { isString } from '@/utils/validate'
 
 const getters = {
   token: (state) => state.token,
@@ -14,7 +14,6 @@ const getters = {
 }
 const state = () => ({
   token: getToken(),
-  uid: getUid(),
   username: '游客',
   isOnLine: 0,
   avatar: '',
@@ -30,15 +29,7 @@ const mutations = {
     state.token = token
     setToken(token)
   },
-  /**
-   * @description 设置uid
-   * @param {*} state
-   * @param {*} uid
-   */
-  setUid(state, uid) {
-    state.uid = uid
-    setUid(uid)
-  },
+
   /**
    * @description 设置用户名
    * @param {*} state
@@ -93,6 +84,7 @@ const actions = {
       logout(state.token)
         .then(() => {
           commit('setToken', '')
+          commit('setIsOnLine', 0)
           resolve()
         })
         .catch((err) => {
@@ -105,9 +97,9 @@ const actions = {
    * @param {*} { commit, dispatch, state }
    * @returns
    */
-  async getUserInfo({ commit, dispatch }) {
+  async getUserInfo({ commit }) {
     const {
-      data: { uid, name },
+      data: { username, avatar, isOnLine },
     } = await getUserInfo()
     /**
      * 检验返回数据是否正常，无对应参数，将使用默认用户名,头像,Roles和Permissions
@@ -116,27 +108,17 @@ const actions = {
      * roles {List}
      * ability {List}
      */
-    if ((uid && !isString(uid)) || (name && !isString(name))) {
+    if (username && !isString(username)) {
       const err = 'getUserInfo核心接口异常，请检查返回JSON格式是否正确'
       Vue.prototype.$baseMessage(err, 'error', 'vab-hey-message-error')
       throw err
     } else {
-      if (uid) commit('setUid', uid)
-      if (name) commit('setUsername', name)
-      // 如不使用permissions权限控制,可删除以下代码
-      if (permissions)
-        dispatch('acl/setPermission', permissions, { root: true })
+      if (username) commit('setUsername', username)
+      if (avatar) commit('setAvatar', avatar)
       if (isOnLine !== null && isOnLine !== undefined) {
         commit('setIsOnLine', isOnLine)
       }
-
-      if (authUserList) {
-        let userModelArr = []
-        for (let item of authUserList) {
-          userModelArr.push(item.appModelId)
-        }
-        commit('setUserModel', userModelArr)
-      }
+      return this.state.user
     }
   },
 

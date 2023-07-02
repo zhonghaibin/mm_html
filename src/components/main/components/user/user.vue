@@ -3,7 +3,7 @@
     <Dropdown @on-click="handleClick">
       <Badge :dot="!!messageUnreadCount">
         <Avatar :src="userAvator" />
-        <span class="title">测试账号</span>
+        <span class="title">{{ username }}</span>
       </Badge>
       <Icon :size="18" type="md-arrow-dropdown" />
       <DropdownMenu slot="list">
@@ -30,6 +30,10 @@
         type: String,
         default: '',
       },
+      username: {
+        type: String,
+        default: '',
+      },
       messageUnreadCount: {
         type: Number,
         default: 0,
@@ -39,6 +43,7 @@
       ...mapActions('user', ['handleLogOut']),
       logout() {
         this.handleLogOut().then(() => {
+          console.log('退出')
           this.$router.push({
             name: 'login',
           })
