@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="box bg">
     <Tabs v-model="tab_index" size="small" @on-click="handleTabClick">
       <TabPane
         v-for="item in tab_list"
@@ -46,4 +46,8 @@
     },
   }
 </script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+  .bg {
+    background: #ffffffff;
+  }
+</style>
