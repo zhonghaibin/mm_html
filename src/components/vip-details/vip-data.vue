@@ -272,10 +272,10 @@
     .list {
       display: flex;
       padding-bottom: 10px;
-
+      margin-top: 10px;
       .card {
         flex: 1;
-        margin: 0 20px;
+        margin: 0 3%;
         border-radius: 20px;
         border: 1px solid #dcdee2;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);

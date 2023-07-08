@@ -219,6 +219,12 @@
       height: 100%;
     }
   }
+  .ivu-icon-md-add {
+    cursor: pointer;
+  }
+  .ivu-icon-ios-trash {
+    cursor: pointer;
+  }
 </style>
 <style lang="less" scoped>
   .layout {
