@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: SSH command runner
+      - name: SSH command
         uses: appleboy/ssh-action@v0.1.10
         with:
             host: ${{secrets.NAS_HOST}}
@@ -22,6 +22,6 @@ jobs:
             password: ${{secrets.NAS_PASSWORD}}
             script: |
               ls
-              sudo docker images ${{secrets.NAS_PASSWORD}}
+              echo ${{secrets.NAS_PASSWORD}} | sudo docker images ${{secrets.NAS_PASSWORD}}
        
           
