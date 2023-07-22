@@ -21,7 +21,7 @@ jobs:
             port: ${{secrets.NAS_PORT}}
             password: ${{secrets.NAS_PASSWORD}}
             script: | # 重启更新镜像
-              docker stop mm_html
-              docker rm mm_html
+               /usr/local/bin/docker stop mm_html
+               /usr/local/bin/docker rm mm_html
        
           
