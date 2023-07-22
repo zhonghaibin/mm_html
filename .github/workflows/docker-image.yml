@@ -20,7 +20,7 @@ jobs:
            node-version: 17.2.0
     - name : npm install and build
       run: |
-          npm install
+          npm run install
           npm run build
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag mm_html:1.0
