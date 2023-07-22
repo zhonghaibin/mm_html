@@ -23,7 +23,8 @@ jobs:
             script: |
                   cd /
                   ls 
-                  echo ${{secrets.NAS_PASSWORD}} | sudo -S docker images
+                  echo ${{secrets.NAS_PASSWORD}} | sudo -i
+                  docker images
            
        
           
