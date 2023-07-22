@@ -22,8 +22,6 @@ jobs:
             password: ${{secrets.NAS_PASSWORD}}
             script: |
               ls
-              sudo docker images << EOF 
-                ${{secrets.NAS_PASSWORD}}
-              EOF
+              sudo docker images ${{secrets.NAS_PASSWORD}}
        
           
