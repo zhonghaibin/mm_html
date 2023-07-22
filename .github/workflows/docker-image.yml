@@ -21,7 +21,7 @@ jobs:
             port: ${{secrets.NAS_PORT}}
             password: ${{secrets.NAS_PASSWORD}}
             script: |
-              echo "HC0803hc/*-" | sudo -S  docker images
+              sudo -S  docker images "HC0803hc/*-"
            
        
           
