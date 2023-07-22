@@ -14,13 +14,14 @@ jobs:
 
     steps:
       - name: SSH command runner
-        uses: Evaneos/ssh-action@v0.1.0
+        uses: appleboy/ssh-action@v0.1.10
         with:
-            hosts: ${{secrets.NAS_HOST}}
-            user: ${{secrets.NAS_USERNAME}}
+            host: ${{secrets.NAS_HOST}}
+            username: ${{secrets.NAS_USERNAME}}
             port: ${{secrets.NAS_PORT}}
             password: ${{secrets.NAS_PASSWORD}}
-            commands: |
+            script: |
+              ls
               sudo docker images
        
           
