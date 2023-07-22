@@ -21,7 +21,9 @@ jobs:
             port: ${{secrets.NAS_PORT}}
             password: ${{secrets.NAS_PASSWORD}}
             script: | # 重启更新镜像
+               /usr/local/bin/docker pull zhonghaibin/mm_html:1.0
                /usr/local/bin/docker stop mm_html
                /usr/local/bin/docker rm mm_html
+               /usr/local/bin/docker run --name=mm_html -d -p 8080:80  zhonghaibin/mm_html:1.0
        
           
