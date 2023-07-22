@@ -22,6 +22,7 @@ jobs:
             username: ${{secrets.NAS_USERNAME}}
             port: ${{secrets.NAS_PORT}}
             password: ${{secrets.NAS_PASSWORD}}
+            envs: PASSWORD
             script: |
               echo $PASSWORD | sudo -S  docker images
            
