@@ -23,4 +23,13 @@ jobs:
           npm install
           npm run build
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag mm_html:1.0
+      run: docker build . --file Dockerfile --tag zhonghaibin/mm_html:1.0
+    - name: Docker Login
+      uses: docker/login-action@v2.2.0
+      with:
+          username: ${{secret.DOCKER_USER}}
+          password: ${{secret.DOCKER_PASSWORD}}
+    - name: Push Docker images
+      run: docker push  zhonghaibin/mm_html:1.0
+          
+          
