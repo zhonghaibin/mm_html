@@ -21,7 +21,7 @@ jobs:
             port: ${{secrets.NAS_PORT}}
             password: ${{secrets.NAS_PASSWORD}}
             script: |
-                  echo ${{secrets.NAS_PASSWORD}} |sudo -S  git
+                  docker
            
        
           
