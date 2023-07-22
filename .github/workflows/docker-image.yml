@@ -15,16 +15,13 @@ jobs:
     steps:
       - name: SSH command
         uses: appleboy/ssh-action@v0.1.10
-        env:
-           PASSWORD: ${{ secrets.NAS_PASSWORD }}
         with:
             host: ${{secrets.NAS_HOST}}
             username: ${{secrets.NAS_USERNAME}}
             port: ${{secrets.NAS_PORT}}
             password: ${{secrets.NAS_PASSWORD}}
-            envs: PASSWORD
             script: |
-              echo $PASSWORD | sudo -S  docker images
+              echo "HC0803hc/*-" | sudo -S  docker images
            
        
           
