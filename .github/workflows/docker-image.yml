@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+    
+  workflow_dispatch:
+    
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3.7.0
+      with:
+           node-version: 17.2.0
+    - name : npm install and build
+      run: |
+          npm install
+          npm run build
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag mm_html:1.0
